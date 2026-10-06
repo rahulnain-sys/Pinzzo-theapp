@@ -6,7 +6,7 @@ export const SITE = {
   whatsapp: '917303106001', // TODO: replace with real Pinzzo WhatsApp number
   phone: '+91 73031 06001', // TODO: replace
   email: 'care@pinzzo.in', // TODO: replace
-  hours: '24 X 7, all days', // TODO: confirm
+  hours: '24 X 7', // TODO: confirm
   city: 'Gurugram',
 
   // Default message pre-filled when someone taps "Order on WhatsApp"
