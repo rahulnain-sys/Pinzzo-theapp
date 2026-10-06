@@ -3,10 +3,10 @@
 // ================================================================
 export const SITE = {
   // WhatsApp number: country code + number, no "+" or spaces
-  whatsapp: '919999999999', // TODO: replace with real Pinzzo WhatsApp number
-  phone: '+91 99999 99999', // TODO: replace
+  whatsapp: '917303106001', // TODO: replace with real Pinzzo WhatsApp number
+  phone: '+91 73031 06001', // TODO: replace
   email: 'care@pinzzo.in', // TODO: replace
-  hours: '8 AM – 11 PM, all days', // TODO: confirm
+  hours: '24 X 7', // TODO: confirm
   city: 'Gurugram',
 
   // Legal details (shown in footer & policy pages) — TODO: fill in real values

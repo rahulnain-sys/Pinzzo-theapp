@@ -25,7 +25,7 @@ const footerHTML = () => `
   <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-4">
     <div class="md:col-span-2">
       <a href="./"><img src="logo.png" alt="Pinzzo" class="h-12 w-auto rounded-xl bg-white px-3 py-2"></a>
-      <p class="mt-4 max-w-sm text-sm">Genuine medicines and pharmacy essentials delivered to your door in Gurugram, in about 30 minutes.</p>
+      <p class="mt-4 max-w-sm text-sm">Genuine medicines and pharmacy essentials delivered to your door, in about 30 minutes.</p>
     </div>
     <div>
       <h4 class="font-bold text-white">Quick links</h4>
@@ -44,7 +44,7 @@ const footerHTML = () => `
     </div>
   </div>
   <div class="mx-auto mt-12 max-w-7xl border-t border-white/10 px-5 pt-6 text-xs">
-    <p>Drug Licence No.: ${SITE.drugLicence} · Medicines are dispensed by licensed pharmacists against valid prescriptions. Information on this site is not a substitute for medical advice.</p>
+    <p>Medicines are dispensed by licensed pharmacists against valid prescriptions. Information on this site is not a substitute for medical advice.</p>
     <p class="mt-3 font-bold tracking-widest text-accent">MEDICINE • WELLNESS • EVERYDAY HEALTH</p>
     <p class="mt-3">© ${new Date().getFullYear()} ${SITE.legalName} · All rights reserved</p>
   </div>`;
