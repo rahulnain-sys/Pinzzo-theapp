@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Brand design tokens -> usable as bg-brand-500, text-accent, font-display, etc. */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #ecfdf7;
+  --color-brand-100: #d1fae9;
+  --color-brand-200: #a7f3d6;
+  --color-brand-400: #34d39e;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-900: #064e3b;
+  --color-ink: #0b1b2b;
+  --color-accent: #ff6b4a;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  @keyframes float { 50% { transform: translateY(-14px); } }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-ink antialiased; }
+}
+
+/* @utility makes a reusable class that other classes can @apply */
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition duration-200 active:scale-95; }
+
+@layer components {
+  .btn-primary { @apply btn bg-brand-600 text-white shadow-lg shadow-brand-600/30 hover:bg-brand-700 hover:-translate-y-0.5; }
+  .btn-ghost { @apply btn border border-slate-200 bg-white hover:border-brand-500 hover:text-brand-700; }
+  .card { @apply rounded-3xl border border-slate-100 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/70; }
+  .eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700; }
+  .section-title { @apply mt-4 text-3xl font-extrabold tracking-tight md:text-5xl; }
+  .icon-box { @apply grid size-14 place-items-center rounded-2xl; }
+}
+
+/* Scroll-reveal: JS adds .is-visible when element enters viewport */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Header gets a glass effect after scrolling */
+.header-scrolled { @apply bg-white/80 shadow-sm backdrop-blur-lg; }
+
+/* FAQ using native <details> */
+details[open] .faq-icon { transform: rotate(45deg); }
+details summary::-webkit-details-marker { display: none; }

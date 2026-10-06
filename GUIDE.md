@@ -1,69 +1,79 @@
-# Pinzzo Static Website — Build Guide
+# Pinzzo Website — Build Guide
 
-A learning guide for how this site is built, the tools used, and the steps to follow.
+A learning guide: what we use, how the project is organised, and the steps to build and ship it.
 
 ## 1. Goal
-An **info website** for Pinzzo (fast home delivery of medicines), similar in spirit to Tata 1mg / PharmEasy landing pages. Static = no server or database; just files the browser opens.
+A modern **info website** for Pinzzo (fast home delivery of medicines), inspired by Tata 1mg / PharmEasy / Apollo 24|7. It is **static**: the final output is plain HTML + CSS + JS files, no server or database.
 
-## 2. Tech stack
-| Tool | Purpose |
-|------|---------|
-| **HTML5** | Structure/content of the page |
-| **CSS3** (Flexbox, Grid, variables, media queries) | Styling & responsive layout |
-| **Vanilla JavaScript** | Interactivity (menu, FAQ, forms, counters) |
-| **VS Code** + *Live Server* extension | Editing + auto-reload preview |
-| **Git + GitHub** | Version control |
-| **GitHub Pages / Netlify** | Free hosting (later) |
-| Chrome DevTools | Debugging, mobile view testing |
+## 2. Tech stack (and why)
+| Tool | What it does | Why |
+|------|--------------|-----|
+| **HTML5** | Page structure | Semantic, SEO-friendly |
+| **Tailwind CSS v4** | Utility-first CSS framework | Fast, consistent, professional styling without writing long CSS files |
+| **Vanilla JavaScript (ES modules)** | Interactivity | No framework needed for an info site |
+| **Vite** | Dev server + build tool | Instant live reload; bundles & minifies for production |
+| **vite-plugin-singlefile** | Inlines CSS/JS into `dist/index.html` | One file that opens anywhere |
+| **Lucide** | SVG icon library | Clean icons, only the used ones are bundled |
+| **Google Fonts** (Plus Jakarta Sans) | Typography | Modern brand look |
+| **Node.js + npm** | Installs/runs the tools above | Industry standard |
+| **Git + GitHub** | Version control | Team collaboration |
+| **Netlify / Vercel / GitHub Pages** | Hosting | Free, deploys from GitHub |
 
-No frameworks or build tools — keeps it simple for learning.
+> Why the first version looked like "notepad": the browser loaded `index.html` but couldn't find the CSS/JS files beside it, so it showed unstyled HTML. Vite's build now inlines everything into one file.
 
 ## 3. Folder structure
 ```
 Pinzzo-theapp/
-├── index.html      # Page content
-├── css/style.css   # All styles
-├── js/main.js      # All behaviour
-├── assets/         # Images, logo, icons
-└── GUIDE.md        # This doc
+├── index.html        # Page markup (Tailwind classes)
+├── src/
+│   ├── style.css     # Tailwind import + brand theme (colors, fonts, animations)
+│   └── main.js       # Icons, menu, scroll animations, counters, pincode check
+├── vite.config.js    # Build config
+├── package.json      # Dependencies & scripts
+├── dist/             # Build output (generated, not committed)
+└── GUIDE.md
 ```
 
-## 4. Build steps (how it goes)
-1. **Research** — study 1mg, PharmEasy, Apollo 24|7: note sections, colors, tone.
-2. **Plan sections** — Header → Hero (pincode check) → Stats → How it works → Services → Why us → FAQ → Contact → Footer.
-3. **Wireframe** — rough sketch on paper / Figma (optional).
-4. **HTML first** — write semantic structure (`header`, `nav`, `main`, `section`, `footer`). No styling yet.
-5. **CSS** — define color variables, base styles, then each section; finally mobile media queries.
-6. **JavaScript** — add interactivity one feature at a time and test each.
-7. **Test** — Chrome, Firefox, mobile view (DevTools `Ctrl+Shift+M`), Lighthouse audit.
-8. **Deploy** — push to GitHub → enable GitHub Pages (Settings → Pages → branch).
-9. **Iterate** — add real logo, images, content from the team.
+## 4. Run it
+```bash
+npm install        # once — installs tools
+npm run dev        # dev server at http://localhost:5173 with live reload
+npm run build      # production build -> dist/index.html
+npm run preview    # preview the production build
+```
 
-## 5. Guidelines / best practices
-- **Semantic HTML**: use proper tags; one `h1` per page; headings in order.
-- **Mobile-first & responsive**: test at 360px, 768px, 1280px widths.
-- **CSS variables** for brand colors — change once, updates everywhere.
-- **Comment sections** in HTML/CSS/JS so code is easy to follow.
-- **Accessibility**: `alt` on images, `aria-label` on icon buttons, good color contrast.
-- **Performance**: compress images (WebP), no unnecessary libraries, script at end of `body`.
-- **SEO**: meaningful `<title>`, `meta description`.
-- **Git**: small commits with clear messages.
-- **Legal (pharmacy)**: don't claim medical advice; add license/disclaimer text before going live.
+## 5. Build steps (how it goes)
+1. **Research** competitors: sections, tone, colors.
+2. **Define brand tokens** in `src/style.css` (`@theme`): colors, font, animations.
+3. **Plan sections**: Header → Hero (pincode check + phone mockup) → Category marquee → Stats → How it works → Services → Why Pinzzo → Testimonials → FAQ → App CTA → Footer.
+4. **Build HTML with Tailwind classes**, mobile-first (`md:` / `lg:` prefixes add desktop styles).
+5. **Add JS features** one by one, testing each.
+6. **Test**: Chrome DevTools device mode, Lighthouse (performance, accessibility, SEO).
+7. **Deploy**: connect GitHub repo to Netlify/Vercel → build command `npm run build`, publish dir `dist`.
+8. **Iterate** with real logo, photos, content and legal pages.
 
-## 6. What each JS feature teaches
+## 6. Guidelines
+- **Mobile-first**: test at 390px, 768px, 1440px.
+- **Brand colors only via tokens** (`bg-brand-600`, `text-accent`) — never hard-code hex in HTML.
+- **Reusable components** (`.btn-primary`, `.card`, `.eyebrow`) live in `style.css`.
+- **Semantic HTML & accessibility**: one `h1`, `aria-label` on icon-only buttons, good contrast, native `<details>` for FAQ.
+- **Performance**: no heavy libraries, tree-shaken icons, compressed images (WebP) in future.
+- **SEO**: title, meta description, meaningful headings.
+- **Git**: small commits, clear messages; never commit `node_modules` or `dist`.
+- **Pharmacy compliance**: add drug license no., disclaimers, privacy policy before going live. Numbers on the page are placeholders.
+
+## 7. JS features & concepts
 | Feature | Concept |
 |---------|---------|
-| Mobile menu | `addEventListener`, `classList.toggle` |
-| FAQ accordion | DOM traversal (`parentElement`) |
+| Glass header on scroll | `scroll` event, `classList.toggle` |
+| Mobile menu | Toggle state, re-rendering icons |
+| Scroll reveal & counters | `IntersectionObserver`, `requestAnimationFrame`, easing |
 | Pincode check | Form handling, regex validation |
-| Contact form | `checkValidity()`, `preventDefault()` |
-| Stat counters | `IntersectionObserver`, `setInterval` |
-
-## 7. Run locally
-Open `index.html` in a browser, or in VS Code right-click → *Open with Live Server*.
+| Live ETA in mockup | `setInterval` |
+| Infinite marquee | CSS keyframes + duplicated content |
 
 ## 8. Next steps
-- Add real logo/images in `assets/`
-- Add pages: About, Careers, Privacy Policy
-- Connect contact form to a service (Formspree / Google Forms)
-- Deploy to GitHub Pages
+- Real logo/images in `public/`
+- More pages: About, Careers, Privacy, Terms
+- Contact/lead form via Formspree
+- Deploy to Netlify/Vercel and add custom domain
