@@ -66,10 +66,10 @@ document.getElementById('pinForm').addEventListener('submit', e => {
   const pin = document.getElementById('pin').value.trim();
   const msg = document.getElementById('pinMsg');
   let text, color;
-  if (!/^\d{6}$/.test(pin)) [text, color] = ['Please enter a valid 6-digit pincode.', 'text-rose-600'];
-  else if (SITE.pincodes.includes(pin)) [text, color] = [`🎉 Yes! We deliver to ${pin} in ~30 minutes.`, 'text-brand-700'];
-  else if (SITE.comingSoon.some(p => pin.startsWith(p))) [text, color] = [`🚀 Coming soon to ${pin}! We're expanding across Delhi NCR.`, 'text-accent'];
-  else [text, color] = [`Sorry, we don't deliver to ${pin} yet. We're live in ${SITE.city}.`, 'text-slate-600'];
+  if (!/^\d{6}$/.test(pin)) [text, color] = ['Please enter a valid 6-digit pincode.', 'text-red-700'];
+  else if (SITE.pincodes.includes(pin)) [text, color] = [`🎉 Yes! We deliver to ${pin} in ~30 minutes.`, 'text-brand-800'];
+  else if (SITE.comingSoon.some(p => pin.startsWith(p))) [text, color] = [`🚀 Coming soon to ${pin}! We're expanding across Delhi NCR.`, 'text-brand-800'];
+  else [text, color] = [`Sorry, we don't deliver to ${pin} yet. We're live in ${SITE.city}.`, 'text-brand-800'];
   msg.textContent = text;
   msg.className = `mt-2 ml-4 min-h-6 text-sm font-semibold ${color}`;
 });

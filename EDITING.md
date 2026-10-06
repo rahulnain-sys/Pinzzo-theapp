@@ -8,7 +8,7 @@ Run `npm run dev`, open http://localhost:5173, and keep it open: every time you 
 | WhatsApp number, phone, email, hours, pincodes | `src/config.js` |
 | Any text, heading, section, number | `index.html` |
 | Brand colors / font | `src/style.css` (the `@theme` block at the top) |
-| Logo | Replace `public/logo.svg` |
+| Logo | Replace `public/logo.png` (and `public/favicon.png` for the browser tab icon) |
 | Pictures / illustrations | `public/img/` |
 | Behaviour (pincode check, upload, animations) | `src/main.js` |
 
@@ -39,18 +39,19 @@ Search `data-to=` in `index.html`:
 Change `500` to the new number (the `0` is just the starting value for the animation).
 
 ## 4. Logo
-1. Save your logo as `logo.png` (transparent background, ~ 400×100px) in `public/`.
-2. In `index.html`, search `logo.svg` and change it to `logo.png` (2 places: header + footer).
+Replace `public/logo.png` with a new file of the **same name** (transparent background works best). The browser-tab icon is `public/favicon.png` (square, ~192×192).
 
 ## 5. Brand colors — `src/style.css`
 ```css
---color-brand-50:  #ecfdf7;   /* lightest tint (backgrounds) */
---color-brand-500: #10b981;   /* main brand color */
---color-brand-600: #059669;   /* buttons */
---color-brand-700: #047857;   /* hover / dark text */
---color-accent:    #ff6b4a;   /* highlight color ("zzo", gradients) */
---color-ink:       #0b1b2b;   /* dark text & dark sections */
+/* Navy (from logo) — buttons, headings, dark sections */
+--color-brand-700: #0a3a75;   /* main navy */
+--color-brand-800: #072f60;   /* hover / headings */
+--color-ink:       #071f3f;   /* darkest sections */
+/* Lime (from theme) — hero background, highlights */
+--color-accent:     #b6e34a;  /* main lime */
+--color-accent-100: #eef8d0;  /* light lime backgrounds */
 ```
+Classes use these names, e.g. `bg-brand-700`, `text-accent`, `bg-accent-100`.
 Tip: paste your main color into https://uicolors.app — it generates the whole 50→900 scale; copy the values here.
 
 ## 6. Images

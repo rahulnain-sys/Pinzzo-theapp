@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pinzzo | Medicines Delivered in 30 Minutes in Gurugram</title>
   <meta name="description" content="Pinzzo delivers genuine medicines and pharmacy essentials to your door in Gurugram in about 30 minutes. Upload your prescription or order on WhatsApp. Up to 10% off.">
-  <meta name="theme-color" content="#059669">
+  <meta name="theme-color" content="#0a3a75">
   <meta property="og:title" content="Pinzzo — Medicines at your door in 30 minutes">
   <meta property="og:description" content="Genuine medicines delivered fast across Gurugram. Order on WhatsApp.">
-  <link rel="icon" href="img/pill.webp">
+  <link rel="icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,23 +17,23 @@
 <body>
 
 <!-- ============ TOP ANNOUNCEMENT BAR ============ -->
-<div class="bg-ink px-4 py-2 text-center text-xs font-medium text-white sm:text-sm">
-  <span class="mr-1">📍</span> Now delivering across <b class="text-brand-300">Gurugram</b> · Delhi NCR coming soon
+<div class="bg-brand-800 px-4 py-2 text-center text-xs font-medium text-white sm:text-sm">
+  <span class="mr-1">📍</span> Now delivering across <b class="text-accent">Gurugram</b> · Delhi NCR coming soon
 </div>
 
 <!-- ============ HEADER ============ -->
 <header id="header" class="sticky top-0 z-50 bg-white/70 backdrop-blur-lg transition duration-300">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
-    <!-- LOGO: replace public/logo.svg (or .png) with the brand logo -->
-    <a href="#" class="shrink-0"><img src="logo.svg" alt="Pinzzo" class="h-10 w-auto"></a>
+    <!-- LOGO: public/logo.png -->
+    <a href="#" class="shrink-0"><img src="logo.png" alt="Pinzzo" class="h-9 w-auto md:h-11"></a>
 
     <ul id="menu" class="absolute inset-x-4 top-full hidden flex-col gap-1 rounded-2xl bg-white p-4 font-medium shadow-xl lg:static lg:flex lg:flex-row lg:gap-7 lg:bg-transparent lg:p-0 lg:shadow-none">
-      <li><a href="#how" class="block py-2 hover:text-brand-600">How it works</a></li>
-      <li><a href="#order" class="block py-2 hover:text-brand-600">Upload Rx</a></li>
-      <li><a href="#shop" class="block py-2 hover:text-brand-600">What we deliver</a></li>
-      <li><a href="#why" class="block py-2 hover:text-brand-600">Why Pinzzo</a></li>
-      <li><a href="#faq" class="block py-2 hover:text-brand-600">FAQ</a></li>
-      <li class="sm:hidden"><a href="#contact" class="block py-2 hover:text-brand-600">Contact us</a></li>
+      <li><a href="#how" class="block py-2 hover:text-brand-700">How it works</a></li>
+      <li><a href="#order" class="block py-2 hover:text-brand-700">Upload Rx</a></li>
+      <li><a href="#shop" class="block py-2 hover:text-brand-700">What we deliver</a></li>
+      <li><a href="#why" class="block py-2 hover:text-brand-700">Why Pinzzo</a></li>
+      <li><a href="#faq" class="block py-2 hover:text-brand-700">FAQ</a></li>
+      <li class="sm:hidden"><a href="#contact" class="block py-2 hover:text-brand-700">Contact us</a></li>
     </ul>
 
     <div class="flex items-center gap-2">
@@ -46,35 +46,39 @@
 
 <main>
   <!-- ============ HERO ============ -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white pt-14 pb-20 md:pt-20">
-    <div class="pointer-events-none absolute -top-40 -right-40 size-[500px] rounded-full bg-brand-200/50 blur-3xl"></div>
-    <div class="pointer-events-none absolute top-60 -left-40 size-[400px] rounded-full bg-orange-100/70 blur-3xl"></div>
+  <section class="relative overflow-hidden bg-accent pt-14 pb-20 md:pt-20">
+    <!-- navy "bubbles" from the logo mark -->
+    <div class="pointer-events-none absolute -top-24 -right-24 hidden size-[420px] rounded-full bg-brand-700/90 lg:block"></div>
+    <div class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-white/25 lg:hidden"></div>
+    <div class="pointer-events-none absolute top-40 right-40 hidden size-40 rounded-full bg-brand-700/90 lg:block"></div>
+    <div class="pointer-events-none absolute -bottom-20 right-1/3 size-48 rounded-full bg-brand-700/10"></div>
+    <div class="pointer-events-none absolute -bottom-16 -left-16 size-56 rounded-full bg-white/25"></div>
 
     <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2">
       <div class="reveal">
-        <span class="eyebrow"><span class="size-2 animate-pulse rounded-full bg-brand-500"></span>Live in Gurugram</span>
-        <h1 class="mt-6 text-4xl leading-[1.1] font-extrabold tracking-tight md:text-6xl">
+        <span class="eyebrow !bg-white/60"><span class="size-2 animate-pulse rounded-full bg-brand-700"></span>Healthcare, stocked closer to you</span>
+        <h1 class="mt-6 text-4xl leading-[1.1] font-extrabold tracking-tight text-brand-800 md:text-6xl">
           Medicines at your door in
-          <span class="bg-gradient-to-r from-brand-600 to-accent bg-clip-text text-transparent">30 minutes</span>
+          <span class="relative inline-block rounded-2xl bg-brand-700 px-3 text-accent">30 minutes</span>
         </h1>
-        <p class="mt-6 max-w-lg text-lg text-slate-600">Just snap your prescription and send it to us. Our pharmacist checks it, and genuine medicines reach your doorstep — fast.</p>
+        <p class="mt-6 max-w-lg text-lg font-medium text-brand-800/80">Just snap your prescription and send it to us. Our pharmacist checks it, and genuine medicines reach your doorstep — fast.</p>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="#order" class="btn-primary"><i data-lucide="upload" class="size-5"></i>Upload prescription</a>
           <a data-wa href="#" target="_blank" rel="noopener" class="btn-wa"><i data-lucide="whatsapp" class="size-5"></i>Order on WhatsApp</a>
+          <a href="#order" class="btn-light"><i data-lucide="upload" class="size-5"></i>Upload prescription</a>
         </div>
 
-        <form id="pinForm" class="mt-6 flex max-w-lg items-center gap-2 rounded-full bg-white p-1.5 shadow-lg shadow-slate-200/80 ring-1 ring-slate-100">
-          <i data-lucide="map-pin" class="ml-3 size-5 shrink-0 text-brand-600"></i>
+        <form id="pinForm" class="mt-6 flex max-w-lg items-center gap-2 rounded-full bg-white p-1.5 shadow-xl shadow-brand-900/10">
+          <i data-lucide="map-pin" class="ml-3 size-5 shrink-0 text-brand-700"></i>
           <input id="pin" type="text" inputmode="numeric" maxlength="6" placeholder="Check your pincode" aria-label="Pincode" class="w-full min-w-0 bg-transparent py-2.5 outline-none placeholder:text-slate-400">
-          <button class="shrink-0 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">Check</button>
+          <button class="shrink-0 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-800">Check</button>
         </form>
         <p id="pinMsg" class="mt-2 ml-4 min-h-6 text-sm font-semibold" aria-live="polite"></p>
 
-        <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-slate-600">
-          <span class="flex items-center gap-2"><i data-lucide="shield-check" class="size-5 text-brand-600"></i>100% genuine</span>
-          <span class="flex items-center gap-2"><i data-lucide="badge-percent" class="size-5 text-brand-600"></i>Up to 10% off</span>
-          <span class="flex items-center gap-2"><i data-lucide="wallet" class="size-5 text-brand-600"></i>Cash on delivery</span>
+        <div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-brand-800">
+          <span class="flex items-center gap-2"><i data-lucide="shield-check" class="size-5 text-brand-700"></i>100% genuine</span>
+          <span class="flex items-center gap-2"><i data-lucide="badge-percent" class="size-5 text-brand-700"></i>Up to 10% off</span>
+          <span class="flex items-center gap-2"><i data-lucide="wallet" class="size-5 text-brand-700"></i>Cash on delivery</span>
         </div>
       </div>
 
@@ -82,7 +86,7 @@
       <div class="reveal relative mx-auto w-full max-w-sm">
         <div class="animate-float overflow-hidden rounded-[2.5rem] border-8 border-ink bg-[#efeae2] shadow-2xl">
           <div class="flex items-center gap-3 bg-[#075e54] px-4 py-3 text-white">
-            <span class="grid size-9 place-items-center rounded-full bg-white"><img src="img/pill.webp" alt="" class="size-6"></span>
+            <span class="grid size-9 place-items-center rounded-full bg-white p-1"><img src="favicon.png" alt="" class="size-7"></span>
             <div class="flex-1"><p class="font-bold leading-tight">Pinzzo</p><p class="text-xs opacity-80">online</p></div>
             <i data-lucide="phone" class="size-4"></i>
           </div>
@@ -138,7 +142,7 @@
     <div class="stat reveal"><img src="img/heart.webp" alt="" class="size-10"><p class="stat-num"><span class="counter" data-to="500">0</span>+</p><p class="text-slate-500">Happy customers</p></div>
     <div class="stat reveal"><img src="img/package.webp" alt="" class="size-10"><p class="stat-num"><span class="counter" data-to="850">0</span>+</p><p class="text-slate-500">Orders delivered</p></div>
     <div class="stat reveal"><img src="img/stopwatch.webp" alt="" class="size-10"><p class="stat-num"><span class="counter" data-to="30">0</span> min</p><p class="text-slate-500">Avg. delivery time</p></div>
-    <div class="stat reveal"><img src="img/pin.webp" alt="" class="size-10"><p class="stat-num !text-3xl md:!text-4xl">Gurugram</p><p class="text-slate-500">Delhi NCR <span class="rounded-full bg-orange-100 px-2 py-0.5 text-xs font-bold text-accent">coming soon</span></p></div>
+    <div class="stat reveal"><img src="img/pin.webp" alt="" class="size-10"><p class="stat-num !text-3xl md:!text-4xl">Gurugram</p><p class="text-slate-500">Delhi NCR <span class="rounded-full bg-accent-100 px-2 py-0.5 text-xs font-bold text-accent-700">coming soon</span></p></div>
   </section>
 
   <!-- ============ HOW IT WORKS ============ -->
@@ -152,19 +156,19 @@
       <div class="relative mt-16 grid gap-8 md:grid-cols-3">
         <div class="pointer-events-none absolute top-24 right-[16%] left-[16%] hidden border-t-2 border-dashed border-brand-200 md:block"></div>
         <div class="step-card reveal">
-          <div class="step-img bg-gradient-to-br from-brand-100 to-brand-50"><img src="img/camera.webp" alt="Snap prescription"><img src="img/rx.webp" alt="" class="step-badge"></div>
+          <div class="step-img bg-gradient-to-br from-accent-200 to-accent-50"><img src="img/camera.webp" alt="Snap prescription"><img src="img/rx.webp" alt="" class="step-badge"></div>
           <span class="step-no">Step 1</span>
           <h3 class="mt-2 text-xl font-bold">Snap &amp; send your Rx</h3>
           <p class="mt-2 text-slate-600">Upload your prescription right here on the website, or simply send its photo to us on WhatsApp.</p>
         </div>
         <div class="step-card reveal">
-          <div class="step-img bg-gradient-to-br from-orange-100 to-orange-50"><img src="img/pharmacist.webp" alt="Pharmacist"><img src="img/check.webp" alt="" class="step-badge"></div>
+          <div class="step-img bg-gradient-to-br from-brand-100 to-brand-50"><img src="img/pharmacist.webp" alt="Pharmacist"><img src="img/check.webp" alt="" class="step-badge"></div>
           <span class="step-no">Step 2</span>
           <h3 class="mt-2 text-xl font-bold">Pharmacist verifies</h3>
           <p class="mt-2 text-slate-600">Our licensed pharmacist checks your prescription and confirms your order with the final price.</p>
         </div>
         <div class="step-card reveal">
-          <div class="step-img bg-gradient-to-br from-sky-100 to-sky-50"><img src="img/scooter.webp" alt="Delivery"><img src="img/package.webp" alt="" class="step-badge"></div>
+          <div class="step-img bg-gradient-to-br from-accent-200 to-accent-50"><img src="img/scooter.webp" alt="Delivery"><img src="img/package.webp" alt="" class="step-badge"></div>
           <span class="step-no">Step 3</span>
           <h3 class="mt-2 text-xl font-bold">Packed &amp; delivered</h3>
           <p class="mt-2 text-slate-600">Sealed safely and rushed to your doorstep in about 30 minutes. Pay by UPI or cash.</p>
@@ -181,9 +185,9 @@
         <h2 class="section-title">Upload your prescription</h2>
         <p class="mt-4 text-slate-600">Pick a clear photo of your prescription. We'll open WhatsApp so you can send it to our pharmacist in one tap.</p>
         <ul class="mt-6 space-y-3 text-slate-700">
-          <li class="flex gap-3"><i data-lucide="circle-check" class="size-5 shrink-0 text-brand-600"></i>Doctor's name, patient name &amp; date should be visible</li>
-          <li class="flex gap-3"><i data-lucide="circle-check" class="size-5 shrink-0 text-brand-600"></i>No prescription? Just type the medicine names</li>
-          <li class="flex gap-3"><i data-lucide="lock" class="size-5 shrink-0 text-brand-600"></i>Your prescription stays private and is only seen by our pharmacist</li>
+          <li class="flex gap-3"><i data-lucide="circle-check" class="size-5 shrink-0 text-brand-700"></i>Doctor's name, patient name &amp; date should be visible</li>
+          <li class="flex gap-3"><i data-lucide="circle-check" class="size-5 shrink-0 text-brand-700"></i>No prescription? Just type the medicine names</li>
+          <li class="flex gap-3"><i data-lucide="lock" class="size-5 shrink-0 text-brand-700"></i>Your prescription stays private and is only seen by our pharmacist</li>
         </ul>
       </div>
 
@@ -223,10 +227,10 @@
 
   <!-- ============ WHY PINZZO (dark) ============ -->
   <section id="why" class="relative overflow-hidden bg-ink py-24 text-white">
-    <div class="pointer-events-none absolute -top-32 left-1/2 size-[600px] -translate-x-1/2 rounded-full bg-brand-600/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -top-32 left-1/2 size-[600px] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"></div>
     <div class="relative mx-auto max-w-7xl px-5">
       <div class="reveal text-center">
-        <span class="eyebrow !bg-white/10 !text-brand-200">Why Pinzzo</span>
+        <span class="eyebrow !bg-accent !text-brand-800">Why Pinzzo</span>
         <h2 class="section-title">Healthcare you can trust</h2>
       </div>
       <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -241,7 +245,7 @@
   </section>
 
   <!-- ============ SERVICE AREA ============ -->
-  <section class="py-24">
+  <section class="bg-accent-100 py-24">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
       <div class="reveal">
         <span class="eyebrow">Where we deliver</span>
@@ -251,7 +255,7 @@
       </div>
       <div class="reveal flex flex-wrap gap-2.5">
         <span class="area">DLF Phase 1–5</span><span class="area">Golf Course Road</span><span class="area">Sohna Road</span><span class="area">MG Road</span><span class="area">Sushant Lok</span><span class="area">South City</span><span class="area">Nirvana Country</span><span class="area">Palam Vihar</span><span class="area">Sector 14–17</span><span class="area">Sector 45–57</span><span class="area">Golf Course Ext.</span><span class="area">New Gurgaon</span><span class="area">Udyog Vihar</span><span class="area">Cyber City</span>
-        <span class="area !border-orange-200 !bg-orange-50 !text-accent">Delhi NCR · soon</span>
+        <span class="area !border-brand-700 !bg-brand-700 !text-accent">Delhi NCR · soon</span>
       </div>
     </div>
   </section>
@@ -262,8 +266,8 @@
       <div class="reveal text-center"><span class="eyebrow">Testimonials</span><h2 class="section-title">Loved across Gurugram</h2></div>
       <div class="mt-16 grid gap-6 md:grid-cols-3">
         <figure class="card reveal"><div class="text-amber-400">★★★★★</div><blockquote class="mt-4 text-slate-700">"Needed my mother's BP medicines late at night. Sent the Rx on WhatsApp and got them in 25 minutes!"</blockquote><figcaption class="mt-6 flex items-center gap-3"><span class="avatar bg-brand-100 text-brand-700">PS</span><span><b>Priya S.</b><br><span class="text-sm text-slate-500">Sector 57, Gurugram</span></span></figcaption></figure>
-        <figure class="card reveal"><div class="text-amber-400">★★★★★</div><blockquote class="mt-4 text-slate-700">"Baby's fever at 11 PM and no chemist open nearby. Pinzzo delivered syrup and a thermometer super quick."</blockquote><figcaption class="mt-6 flex items-center gap-3"><span class="avatar bg-orange-100 text-accent">AK</span><span><b>Amit K.</b><br><span class="text-sm text-slate-500">DLF Phase 3, Gurugram</span></span></figcaption></figure>
-        <figure class="card reveal"><div class="text-amber-400">★★★★★</div><blockquote class="mt-4 text-slate-700">"The pharmacist actually called to explain the dosage. Genuine medicines and a nice discount too."</blockquote><figcaption class="mt-6 flex items-center gap-3"><span class="avatar bg-sky-100 text-sky-700">NR</span><span><b>Neha R.</b><br><span class="text-sm text-slate-500">Sohna Road, Gurugram</span></span></figcaption></figure>
+        <figure class="card reveal"><div class="text-amber-400">★★★★★</div><blockquote class="mt-4 text-slate-700">"Baby's fever at 11 PM and no chemist open nearby. Pinzzo delivered syrup and a thermometer super quick."</blockquote><figcaption class="mt-6 flex items-center gap-3"><span class="avatar bg-accent-100 text-brand-700">AK</span><span><b>Amit K.</b><br><span class="text-sm text-slate-500">DLF Phase 3, Gurugram</span></span></figcaption></figure>
+        <figure class="card reveal"><div class="text-amber-400">★★★★★</div><blockquote class="mt-4 text-slate-700">"The pharmacist actually called to explain the dosage. Genuine medicines and a nice discount too."</blockquote><figcaption class="mt-6 flex items-center gap-3"><span class="avatar bg-brand-100 text-brand-700">NR</span><span><b>Neha R.</b><br><span class="text-sm text-slate-500">Sohna Road, Gurugram</span></span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -284,14 +288,16 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="bg-gradient-to-br from-brand-600 to-brand-900 py-24 text-white">
+  <section id="contact" class="relative overflow-hidden bg-brand-700 py-24 text-white">
+    <div class="pointer-events-none absolute -top-20 -left-20 size-72 rounded-full bg-white/5"></div>
+    <div class="pointer-events-none absolute -right-16 -bottom-24 size-80 rounded-full bg-accent/15"></div>
     <div class="mx-auto max-w-7xl px-5">
       <div class="reveal text-center">
-        <span class="eyebrow !bg-white/15 !text-white">Contact us</span>
+        <span class="eyebrow !bg-accent !text-brand-800">Contact us</span>
         <h2 class="section-title">We're here to help</h2>
-        <p class="mx-auto mt-4 max-w-xl text-brand-100">Questions about a medicine, an order or delivery? Reach us anytime.</p>
+        <p class="mx-auto mt-4 max-w-xl text-brand-200">Questions about a medicine, an order or delivery? Reach us anytime.</p>
       </div>
-      <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="relative mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <a data-wa href="#" target="_blank" rel="noopener" class="contact reveal"><i data-lucide="whatsapp"></i><p class="label">WhatsApp</p><p data-site="phone"></p></a>
         <a data-tel href="#" class="contact reveal"><i data-lucide="phone"></i><p class="label">Call us</p><p data-site="phone"></p></a>
         <a data-mail href="#" class="contact reveal"><i data-lucide="mail"></i><p class="label">Email</p><p data-site="email"></p></a>
@@ -305,7 +311,7 @@
 <footer class="bg-ink pt-16 pb-24 text-slate-400 md:pb-8">
   <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-4">
     <div class="md:col-span-2">
-      <img src="logo.svg" alt="Pinzzo" class="h-10 w-auto rounded-lg bg-white p-1">
+      <img src="logo.png" alt="Pinzzo" class="h-12 w-auto rounded-xl bg-white px-3 py-2">
       <p class="mt-4 max-w-sm text-sm">Genuine medicines and pharmacy essentials delivered to your door in Gurugram, in about 30 minutes.</p>
     </div>
     <div><h4 class="font-bold text-white">Quick links</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="#how" class="hover:text-white">How it works</a></li><li><a href="#order" class="hover:text-white">Upload prescription</a></li><li><a href="#faq" class="hover:text-white">FAQ</a></li><li><a href="#contact" class="hover:text-white">Contact</a></li></ul></div>
@@ -314,6 +320,7 @@
   <div class="mx-auto mt-12 max-w-7xl border-t border-white/10 px-5 pt-6 text-xs">
     <!-- TODO: add real drug licence number before going live -->
     <p>Drug Licence No.: XXXX-XXXX · Medicines are dispensed by licensed pharmacists against valid prescriptions. Information on this site is not a substitute for medical advice.</p>
+    <p class="mt-3 font-bold tracking-widest text-accent">MEDICINE • WELLNESS • EVERYDAY HEALTH</p>
     <p class="mt-3">© <span id="year"></span> Pinzzo. All rights reserved.</p>
   </div>
 </footer>
@@ -321,7 +328,7 @@
 <!-- Floating WhatsApp (desktop) + sticky bottom bar (mobile) -->
 <a data-wa href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp" class="fixed right-6 bottom-6 z-40 hidden size-16 place-items-center rounded-full bg-[#25d366] text-white shadow-xl shadow-green-600/40 transition hover:scale-110 md:grid"><i data-lucide="whatsapp" class="size-8"></i><span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40"></span></a>
 <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-slate-100 bg-white/95 p-3 backdrop-blur md:hidden">
-  <a href="#order" class="btn-primary !py-3 text-sm"><i data-lucide="upload" class="size-4"></i>Upload Rx</a>
+  <a href="#order" class="btn-lime !py-3 text-sm"><i data-lucide="upload" class="size-4"></i>Upload Rx</a>
   <a data-wa href="#" target="_blank" rel="noopener" class="btn-wa !py-3 text-sm"><i data-lucide="whatsapp" class="size-4"></i>WhatsApp</a>
 </div>
 
