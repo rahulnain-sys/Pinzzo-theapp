@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pinzzo - Medicines delivered to your doorstep, fast.">
+  <title>Pinzzo | Medicines Delivered Fast</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header / Navigation ===== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="logo">Pin<span>zzo</span></a>
+      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Pinzzo</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="btn btn-sm">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Medicines at your door in <span class="accent">30 minutes</span></h1>
+          <p>Genuine medicines, health essentials and lab tests — delivered fast from licensed pharmacies near you.</p>
+          <form class="search" id="pincodeForm">
+            <input type="text" id="pincode" placeholder="Enter your pincode" maxlength="6" inputmode="numeric">
+            <button class="btn" type="submit">Check delivery</button>
+          </form>
+          <p class="search-msg" id="pincodeMsg"></p>
+        </div>
+        <div class="hero-card">
+          <div class="big-icon">💊</div>
+          <p><strong>Upload prescription</strong><br>We'll take care of the rest</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats container">
+      <div><h3 class="counter" data-target="50000">0</h3><p>Happy customers</p></div>
+      <div><h3 class="counter" data-target="120">0</h3><p>Partner pharmacies</p></div>
+      <div><h3 class="counter" data-target="30">0</h3><p>Minute avg. delivery</p></div>
+      <div><h3 class="counter" data-target="25">0</h3><p>Cities</p></div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section id="how" class="section">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <div class="grid-3">
+          <div class="card"><span class="step">1</span><h4>Search or upload</h4><p>Find your medicine or upload a valid prescription.</p></div>
+          <div class="card"><span class="step">2</span><h4>Pharmacist verifies</h4><p>A licensed pharmacist checks your order.</p></div>
+          <div class="card"><span class="step">3</span><h4>Fast delivery</h4><p>Packed and delivered to your doorstep, quickly.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Our services</h2>
+        <div class="grid-4">
+          <div class="card"><div class="icon">💊</div><h4>Medicines</h4><p>Prescription &amp; OTC medicines.</p></div>
+          <div class="card"><div class="icon">🧪</div><h4>Lab tests</h4><p>Sample pickup from home.</p></div>
+          <div class="card"><div class="icon">🩺</div><h4>Doctor consult</h4><p>Talk to doctors online.</p></div>
+          <div class="card"><div class="icon">🧴</div><h4>Health essentials</h4><p>Wellness, baby &amp; personal care.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why us ===== -->
+    <section id="why" class="section">
+      <div class="container">
+        <h2 class="section-title">Why choose Pinzzo?</h2>
+        <div class="grid-3">
+          <div class="card"><h4>✅ 100% genuine</h4><p>Sourced only from licensed pharmacies.</p></div>
+          <div class="card"><h4>⚡ Super fast</h4><p>Hyperlocal delivery in under 30 minutes.</p></div>
+          <div class="card"><h4>💰 Best prices</h4><p>Up to 25% off on every order.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="section alt">
+      <div class="container narrow">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="faq-item">
+          <button class="faq-q">Do I need a prescription?</button>
+          <div class="faq-a"><p>Only for prescription medicines. OTC products can be ordered directly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How fast is delivery?</button>
+          <div class="faq-a"><p>Most orders arrive within 30 minutes in serviceable areas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What payment options are available?</button>
+          <div class="faq-a"><p>UPI, cards, net banking, wallets and cash on delivery.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Get in touch</h2>
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-msg" id="formMsg"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="logo">Pin<span>zzo</span></p>
+      <p>&copy; <span id="year"></span> Pinzzo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
