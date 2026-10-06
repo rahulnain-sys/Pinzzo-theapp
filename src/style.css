@@ -6,6 +6,7 @@
   --color-brand-50: #ecfdf7;
   --color-brand-100: #d1fae9;
   --color-brand-200: #a7f3d6;
+  --color-brand-300: #6ee7bf;
   --color-brand-400: #34d39e;
   --color-brand-500: #10b981;
   --color-brand-600: #059669;
@@ -35,6 +36,54 @@
   .eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700; }
   .section-title { @apply mt-4 text-3xl font-extrabold tracking-tight md:text-5xl; }
   .icon-box { @apply grid size-14 place-items-center rounded-2xl; }
+  .btn-wa { @apply btn bg-[#25d366] text-white shadow-lg shadow-green-600/30 hover:bg-[#1ebe5a] hover:-translate-y-0.5; }
+
+  /* marquee category chip */
+  .chip { @apply flex items-center gap-2; }
+  .chip img { @apply size-8; }
+
+  /* stats */
+  .stat { @apply flex flex-col items-center gap-1 rounded-3xl border border-slate-100 bg-white p-6 text-center shadow-sm; }
+  .stat-num { @apply mt-2 text-4xl font-extrabold text-brand-600 md:text-5xl; }
+
+  /* how-it-works steps */
+  .step-card { @apply relative rounded-3xl bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl; }
+  .step-img { @apply relative mx-auto grid size-36 place-items-center rounded-full; }
+  .step-img > img:first-child { @apply size-20 drop-shadow-xl transition duration-500; }
+  .step-card:hover .step-img > img:first-child { @apply scale-110 -rotate-6; }
+  .step-badge { @apply absolute -right-1 -bottom-1 size-12 rounded-2xl bg-white p-1.5 shadow-lg; }
+  .step-no { @apply mt-6 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-bold tracking-wider text-brand-700 uppercase; }
+
+  /* category cards */
+  .cat { @apply rounded-3xl border border-slate-100 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl md:p-7; }
+  .cat img { @apply size-16 drop-shadow-lg transition duration-500 md:size-20; }
+  .cat:hover img { @apply scale-110 -rotate-6; }
+  .cat h3 { @apply mt-5 font-bold md:text-lg; }
+  .cat p { @apply mt-1 text-sm text-slate-500; }
+
+  /* why section */
+  .why { @apply rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur transition hover:bg-white/10; }
+  .why img { @apply size-14 drop-shadow-lg; }
+  .why h3 { @apply mt-5 text-xl font-bold; }
+  .why p { @apply mt-2 text-slate-400; }
+
+  .area { @apply rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-700; }
+  .avatar { @apply grid size-11 place-items-center rounded-full font-bold; }
+
+  .faq { @apply rounded-2xl border border-slate-100 bg-white p-6 shadow-sm; }
+  .faq summary { @apply flex cursor-pointer list-none items-center justify-between gap-4 font-semibold; }
+  .faq p { @apply mt-4 text-slate-600; }
+
+  .contact { @apply flex flex-col items-center rounded-3xl bg-white/10 p-7 text-center ring-1 ring-white/15 backdrop-blur transition hover:-translate-y-1 hover:bg-white/15; }
+  .contact svg { @apply size-8 text-brand-200; }
+  .contact .label { @apply mt-4 text-sm text-brand-100; }
+  .contact p:last-child { @apply mt-1 font-bold break-all; }
+
+  /* WhatsApp chat bubbles in hero mockup */
+  .chat-in, .chat-out { @apply relative rounded-xl px-3 pt-2 pb-5 shadow-sm; }
+  .chat-in { @apply rounded-tl-none bg-white; }
+  .chat-out { @apply rounded-tr-none bg-[#d9fdd3]; }
+  .chat-time { @apply absolute right-2 bottom-1 text-[10px] text-slate-400; }
 }
 
 /* Scroll-reveal: JS adds .is-visible when element enters viewport */

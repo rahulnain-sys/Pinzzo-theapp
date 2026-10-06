@@ -27,11 +27,14 @@ Pinzzo-theapp/
 ├── index.html        # Page markup (Tailwind classes)
 ├── src/
 │   ├── style.css     # Tailwind import + brand theme (colors, fonts, animations)
-│   └── main.js       # Icons, menu, scroll animations, counters, pincode check
+│   ├── config.js     # WhatsApp number, contacts, pincodes (edit here!)
+│   └── main.js       # Icons, menu, animations, pincode check, Rx upload -> WhatsApp
+├── public/           # logo.svg + img/ (3D illustrations, copied as-is)
 ├── vite.config.js    # Build config
 ├── package.json      # Dependencies & scripts
 ├── dist/             # Build output (generated, not committed)
-└── GUIDE.md
+├── GUIDE.md
+└── EDITING.md      # How to edit any part yourself
 ```
 
 ## 4. Run it
