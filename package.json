@@ -11,8 +11,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.3.3",
-    "vite-plugin-singlefile": "^2.3.3"
+    "vite": "^8.3.3"
   },
   "dependencies": {
     "lucide": "^1.52.0"

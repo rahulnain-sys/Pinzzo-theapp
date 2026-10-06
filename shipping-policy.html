@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping & Delivery Policy | Pinzzo</title>
+  <meta name="description" content="Where Pinzzo delivers, delivery times and how delivery works.">
+  <meta name="theme-color" content="#0a3a75">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header" class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg transition duration-300">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3">
+    <a href="./" class="shrink-0"><img src="logo.png" alt="Pinzzo" class="h-9 w-auto md:h-11"></a>
+    <div class="flex items-center gap-2">
+      <a href="./" class="btn-ghost !px-4 !py-2.5 text-sm"><i data-lucide="arrow-left" class="size-4"></i><span class="hidden sm:inline">Back to home</span></a>
+      <a data-wa href="#" target="_blank" rel="noopener" class="btn-wa !px-4 !py-2.5 text-sm"><i data-lucide="whatsapp" class="size-4"></i><span class="hidden sm:inline">Order on WhatsApp</span></a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ TITLE ============ -->
+<section class="relative overflow-hidden bg-accent py-14 md:py-20">
+  <div class="pointer-events-none absolute -top-20 -right-20 size-72 rounded-full bg-brand-700/90"></div>
+  <div class="relative mx-auto max-w-7xl px-5">
+    <span class="eyebrow !bg-white/60">Our policies</span>
+    <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-brand-800 md:text-5xl">Shipping & Delivery Policy</h1>
+    <p class="mt-3 font-medium text-brand-800/80">Last updated: <span data-site="policyUpdated"></span></p>
+  </div>
+</section>
+
+<!-- ============ CONTENT (edit the text below) ============ -->
+<main class="mx-auto grid max-w-7xl gap-12 px-5 py-14 lg:grid-cols-[1fr_260px]">
+  <article class="prose">
+
+    <p>Pinzzo delivers medicines and pharmacy essentials fast, right to your door. Here's how delivery works.</p>
+
+    <h2>1. Where we deliver</h2>
+    <p>We currently deliver across serviceable pincodes in <strong>Gurugram, Haryana</strong>. You can check your pincode on our <a href="./">home page</a>. We plan to expand to the rest of Delhi NCR soon.</p>
+
+    <h2>2. Delivery time</h2>
+    <ul>
+      <li>Most orders are delivered in about <strong>30 minutes</strong> after the pharmacist confirms the order.</li>
+      <li>Delivery hours: <span data-site="hours"></span>.</li>
+      <li>Times are estimates and may be longer during heavy rain, traffic, festivals or high demand. We'll keep you updated on WhatsApp.</li>
+      <li>If a medicine is not immediately available, we'll tell you the expected time before confirming.</li>
+    </ul>
+
+    <h2>3. Delivery charges</h2>
+    <p>Any delivery charge, if applicable, is shared with you before the order is confirmed. There are no hidden charges.</p>
+
+    <h2>4. Receiving your order</h2>
+    <ul>
+      <li>Please keep your phone reachable so our delivery partner can contact you.</li>
+      <li>For some prescription medicines, the delivery partner may ask to see the original prescription.</li>
+      <li>Please check the products, quantity and expiry date at the time of delivery.</li>
+    </ul>
+
+    <h2>5. Safe &amp; private packaging</h2>
+    <p>Orders are packed in sealed, tamper-evident and discreet packaging. Temperature-sensitive medicines such as insulin are carried in insulated packs to maintain the cold chain.</p>
+
+    <h2>6. Failed or missed delivery</h2>
+    <p>If we cannot reach you or the address is incorrect, we'll try to contact you. If delivery isn't possible, the order may be cancelled and any payment refunded as per our <a href="refund-policy.html">Refund &amp; Cancellation Policy</a>.</p>
+
+    <h2>7. Contact us</h2>
+    <ul>
+      <li><strong>Grievance Officer:</strong> <span data-site="grievanceOfficer"></span></li>
+      <li><strong>Email:</strong> <a data-mail href="#"><span data-site="email"></span></a></li>
+      <li><strong>Phone / WhatsApp:</strong> <span data-site="phone"></span></li>
+      <li><strong>Address:</strong> <span data-site="address"></span></li>
+    </ul>
+
+  </article>
+  <aside class="hidden lg:block">
+    <div class="sticky top-28 rounded-3xl border border-slate-100 bg-slate-50 p-5 text-sm">
+      <p class="mb-3 px-3 font-bold text-brand-800">On this page</p>
+      <ul id="toc" class="space-y-0.5 text-slate-600"></ul>
+    </div>
+  </aside>
+</main>
+
+<!-- Footer is generated from src/common.js -->
+<footer id="site-footer" class="bg-ink pt-16 pb-8 text-slate-400"></footer>
+
+<script type="module" src="/src/policy.js"></script>
+</body>
+</html>

@@ -12,14 +12,13 @@ A modern **info website** for Pinzzo (fast home delivery of medicines), inspired
 | **Tailwind CSS v4** | Utility-first CSS framework | Fast, consistent, professional styling without writing long CSS files |
 | **Vanilla JavaScript (ES modules)** | Interactivity | No framework needed for an info site |
 | **Vite** | Dev server + build tool | Instant live reload; bundles & minifies for production |
-| **vite-plugin-singlefile** | Inlines CSS/JS into `dist/index.html` | One file that opens anywhere |
 | **Lucide** | SVG icon library | Clean icons, only the used ones are bundled |
 | **Google Fonts** (Plus Jakarta Sans) | Typography | Modern brand look |
 | **Node.js + npm** | Installs/runs the tools above | Industry standard |
 | **Git + GitHub** | Version control | Team collaboration |
 | **Netlify / Vercel / GitHub Pages** | Hosting | Free, deploys from GitHub |
 
-> Why the first version looked like "notepad": the browser loaded `index.html` but couldn't find the CSS/JS files beside it, so it showed unstyled HTML. Vite's build now inlines everything into one file.
+> Why the first version looked like "notepad": the browser loaded `index.html` but couldn't find the CSS/JS files beside it, so it showed unstyled HTML. Running through Vite (`npm run dev`) or a host like Vercel avoids this.
 
 ## 3. Folder structure
 ```

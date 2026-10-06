@@ -111,3 +111,13 @@
 /* FAQ using native <details> */
 details[open] .faq-icon { transform: rotate(45deg); }
 details summary::-webkit-details-marker { display: none; }
+
+/* Policy pages: readable long-form text */
+.prose { @apply max-w-3xl text-slate-700 leading-relaxed; }
+.prose h2 { @apply mt-12 mb-4 scroll-mt-28 text-2xl font-extrabold text-brand-800; }
+.prose h3 { @apply mt-6 mb-2 text-lg font-bold text-brand-800; }
+.prose p { @apply mb-4; }
+.prose ul { @apply mb-4 list-disc space-y-2 pl-6 marker:text-accent-600; }
+.prose a { @apply font-semibold text-brand-700 underline decoration-accent decoration-2 underline-offset-4; }
+.prose strong { @apply text-brand-800; }
+.prose .note { @apply my-6 rounded-2xl border border-accent-200 bg-accent-50 p-5 text-sm; }

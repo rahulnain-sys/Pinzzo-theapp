@@ -9,6 +9,13 @@ export const SITE = {
   hours: '8 AM – 11 PM, all days', // TODO: confirm
   city: 'Gurugram',
 
+  // Legal details (shown in footer & policy pages) — TODO: fill in real values
+  legalName: 'Pinzzo [Legal Entity Name] Pvt. Ltd.',
+  address: '[Registered address], Gurugram, Haryana – 1220XX',
+  drugLicence: 'XXXX-XXXX',
+  grievanceOfficer: '[Name], Grievance Officer',
+  policyUpdated: '6 October 2026',
+
   // Default message pre-filled when someone taps "Order on WhatsApp"
   waMessage: 'Hi Pinzzo! I would like to order medicines.',
 

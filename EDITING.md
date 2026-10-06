@@ -11,6 +11,9 @@ Run `npm run dev`, open http://localhost:5173, and keep it open: every time you 
 | Logo | Replace `public/logo.png` (and `public/favicon.png` for the browser tab icon) |
 | Pictures / illustrations | `public/img/` |
 | Behaviour (pincode check, upload, animations) | `src/main.js` |
+| Footer (links, licence line) | `src/common.js` |
+| Policy text | `privacy-policy.html`, `terms.html`, `refund-policy.html`, `shipping-policy.html` |
+| Company legal name, address, licence no., grievance officer | `src/config.js` |
 
 ---
 
@@ -64,6 +67,13 @@ Current illustrations are Microsoft Fluent 3D Emoji (MIT licence, free for comme
 ## 7. Testimonials / FAQ / categories
 Copy one existing block (e.g. a whole `<figure class="card reveal">…</figure>` or `<details class="faq reveal">…</details>`), paste it below, and edit the text.
 
+## 7b. Policy pages
+Open the policy `.html` file and edit the text between `<article class="prose">` and `</article>`. Each `<h2>` heading automatically appears in the "On this page" menu. Update `policyUpdated` in `src/config.js` whenever you change a policy.
+
+**Add a new policy page:** copy `terms.html` to e.g. `ip-policy.html`, change the title and text, then add it in two places:
+1. `vite.config.js` → the `pages` list (`'ip-policy'`)
+2. `src/common.js` → the `POLICIES` list (`['ip-policy.html', 'IP Policy']`)
+
 ## 8. Remove a section
 Delete everything from its `<!-- ===== NAME ===== -->` comment to the closing `</section>`.
 
@@ -71,7 +81,7 @@ Delete everything from its `<!-- ===== NAME ===== -->` comment to the closing `<
 ```bash
 npm run build        # creates the dist/ folder
 ```
-Upload the **whole `dist/` folder** to your host (Netlify drop: https://app.netlify.com/drop, or AWS S3).
+Normally you don't need this: Vercel builds automatically when you push to GitHub (see `DEPLOY.md`).
 
 ## 10. Save your work with Git
 ```bash
