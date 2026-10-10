@@ -46,7 +46,7 @@
 
 <main>
   <!-- ============ HERO ============ -->
-  <section class="relative overflow-hidden bg-accent pt-14 pb-20 md:pt-20">
+  <section id="hero" class="relative overflow-hidden bg-accent pt-14 pb-20 md:pt-20">
     <!-- navy "bubbles" from the logo mark -->
     <div class="pointer-events-none absolute -top-24 -right-24 hidden size-[420px] rounded-full bg-brand-700/90 lg:block"></div>
     <div class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-white/25 lg:hidden"></div>
@@ -65,7 +65,7 @@
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a data-wa href="#" target="_blank" rel="noopener" class="btn-wa"><i data-lucide="whatsapp" class="size-5"></i>Order on WhatsApp</a>
-          <a href="#order" class="btn-light"><i data-lucide="upload" class="size-5"></i>Upload prescription</a>
+          <a href="#order" data-track="cta_click" data-track-label="upload_rx" class="btn-light"><i data-lucide="upload" class="size-5"></i>Upload prescription</a>
         </div>
 
         <form id="pinForm" class="mt-6 flex max-w-lg items-center gap-2 rounded-full bg-white p-1.5 shadow-xl shadow-brand-900/10">
@@ -245,13 +245,13 @@
   </section>
 
   <!-- ============ SERVICE AREA ============ -->
-  <section class="bg-accent-100 py-24">
+  <section id="area" class="bg-accent-100 py-24">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
       <div class="reveal">
         <span class="eyebrow">Where we deliver</span>
         <h2 class="section-title">Across Gurugram, right now</h2>
         <p class="mt-4 text-slate-600">From DLF to Sohna Road, we're probably already around the corner. Delhi, Noida, Faridabad &amp; Ghaziabad are next!</p>
-        <a data-wa data-wa-msg="Hi Pinzzo! Please notify me when you start delivering in my area." href="#" target="_blank" rel="noopener" class="btn-ghost mt-6"><i data-lucide="bell" class="size-4"></i>Notify me for my area</a>
+        <a data-wa data-wa-msg="Hi Pinzzo! Please notify me when you start delivering in my area." data-track-label="notify_area" href="#" target="_blank" rel="noopener" class="btn-ghost mt-6"><i data-lucide="bell" class="size-4"></i>Notify me for my area</a>
       </div>
       <div class="reveal flex flex-wrap gap-2.5">
         <span class="area">DLF Phase 1–5</span><span class="area">Golf Course Road</span><span class="area">Sohna Road</span><span class="area">MG Road</span><span class="area">Sushant Lok</span><span class="area">South City</span><span class="area">Nirvana Country</span><span class="area">Palam Vihar</span><span class="area">Sector 14–17</span><span class="area">Sector 45–57</span><span class="area">Golf Course Ext.</span><span class="area">New Gurgaon</span><span class="area">Udyog Vihar</span><span class="area">Cyber City</span>
@@ -312,10 +312,10 @@
 <footer id="site-footer" class="bg-ink pt-16 pb-24 text-slate-400 md:pb-8"></footer>
 
 <!-- Floating WhatsApp (desktop) + sticky bottom bar (mobile) -->
-<a data-wa href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp" class="fixed right-6 bottom-6 z-40 hidden size-16 place-items-center rounded-full bg-[#25d366] text-white shadow-xl shadow-green-600/40 transition hover:scale-110 md:grid"><i data-lucide="whatsapp" class="size-8"></i><span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40"></span></a>
+<a data-wa href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp" data-track-loc="floating" class="fixed right-6 bottom-6 z-40 hidden size-16 place-items-center rounded-full bg-[#25d366] text-white shadow-xl shadow-green-600/40 transition hover:scale-110 md:grid"><i data-lucide="whatsapp" class="size-8"></i><span class="absolute inset-0 animate-ping rounded-full bg-[#25d366]/40"></span></a>
 <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-slate-100 bg-white/95 p-3 backdrop-blur md:hidden">
-  <a href="#order" class="btn-lime !py-3 text-sm"><i data-lucide="upload" class="size-4"></i>Upload Rx</a>
-  <a data-wa href="#" target="_blank" rel="noopener" class="btn-wa !py-3 text-sm"><i data-lucide="whatsapp" class="size-4"></i>WhatsApp</a>
+  <a href="#order" data-track="cta_click" data-track-label="upload_rx" data-track-loc="mobile_bar" class="btn-lime !py-3 text-sm"><i data-lucide="upload" class="size-4"></i>Upload Rx</a>
+  <a data-wa data-track-loc="mobile_bar" href="#" target="_blank" rel="noopener" class="btn-wa !py-3 text-sm"><i data-lucide="whatsapp" class="size-4"></i>WhatsApp</a>
 </div>
 
 <script type="module" src="/src/main.js"></script>

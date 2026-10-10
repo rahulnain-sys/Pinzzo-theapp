@@ -14,6 +14,7 @@ Run `npm run dev`, open http://localhost:5173, and keep it open: every time you 
 | Footer (links, licence line) | `src/common.js` |
 | Policy text | `privacy-policy.html`, `terms.html`, `refund-policy.html`, `shipping-policy.html` |
 | Company legal name, address, licence no., grievance officer | `src/config.js` |
+| Google Analytics ID, tracked buttons | `src/config.js` (`ga4Id`), `src/analytics.js` |
 
 ---
 
@@ -73,6 +74,27 @@ Open the policy `.html` file and edit the text between `<article class="prose">`
 **Add a new policy page:** copy `terms.html` to e.g. `ip-policy.html`, change the title and text, then add it in two places:
 1. `vite.config.js` → the `pages` list (`'ip-policy'`)
 2. `src/common.js` → the `POLICIES` list (`['ip-policy.html', 'IP Policy']`)
+
+## 7c. Google Analytics 4
+Paste your Measurement ID (looks like `G-ABC123XYZ`) into `ga4Id` in `src/config.js`. Leave it empty to switch analytics off. Visitors see a consent banner; nothing is stored until they tap Accept.
+
+Tracked automatically (no code needed):
+
+| Event | When | Details sent |
+|---|---|---|
+| `whatsapp_click` | Any button with `data-wa` | `location` (section), `label` |
+| `call_click` / `email_click` | Buttons with `data-tel` / `data-mail` | `location` |
+| `pincode_check` | Pincode form | `result` (serviceable, coming_soon, not_serviceable, invalid), `pincode` |
+| `rx_file_selected` | Prescription chosen | `file_type` (image/pdf) |
+| `rx_send` | "Send to Pinzzo on WhatsApp" | `has_file`, `has_note`, `method` |
+| `faq_open` | An FAQ is opened | `question` |
+| `cta_click` | Any element with `data-track="cta_click"` | `location`, `label` |
+
+**Track a new button:** add `data-track="cta_click" data-track-label="my_button"` to it. `data-track-loc="..."` overrides the section name.
+
+**Never** send names, phone numbers, medicine names, notes or prescription details to analytics.
+
+**Campaign links:** add UTM tags to every link you share, e.g. `https://pinzzo.in/?utm_source=instagram&utm_campaign=diwali`. The site remembers the campaign for 30 days and adds `Ref: instagram / diwali` to the WhatsApp message, so the team can see which campaign each WhatsApp order came from.
 
 ## 8. Remove a section
 Delete everything from its `<!-- ===== NAME ===== -->` comment to the closing `</section>`.

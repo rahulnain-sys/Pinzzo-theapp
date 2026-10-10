@@ -1,5 +1,6 @@
 import { SITE, waLink } from './config.js';
 import { initCommon, renderIcons } from './common.js';
+import { track, withRef } from './analytics.js';
 
 initCommon();
 
@@ -44,11 +45,13 @@ document.getElementById('pinForm').addEventListener('submit', e => {
   e.preventDefault();
   const pin = document.getElementById('pin').value.trim();
   const msg = document.getElementById('pinMsg');
-  let text, color;
-  if (!/^\d{6}$/.test(pin)) [text, color] = ['Please enter a valid 6-digit pincode.', 'text-red-700'];
-  else if (SITE.pincodes.includes(pin)) [text, color] = [`🎉 Yes! We deliver to ${pin} in ~30 minutes.`, 'text-brand-800'];
-  else if (SITE.comingSoon.some(p => pin.startsWith(p))) [text, color] = [`🚀 Coming soon to ${pin}! We're expanding across Delhi NCR.`, 'text-brand-800'];
-  else [text, color] = [`Sorry, we don't deliver to ${pin} yet. We're live in ${SITE.city}.`, 'text-brand-800'];
+  let text, color, result;
+  if (!/^\d{6}$/.test(pin)) [text, color, result] = ['Please enter a valid 6-digit pincode.', 'text-red-700', 'invalid'];
+  else if (SITE.pincodes.includes(pin)) [text, color, result] = [`🎉 Yes! We deliver to ${pin} in ~30 minutes.`, 'text-brand-800', 'serviceable'];
+  else if (SITE.comingSoon.some(p => pin.startsWith(p))) [text, color, result] = [`🚀 Coming soon to ${pin}! We're expanding across Delhi NCR.`, 'text-brand-800', 'coming_soon'];
+  else [text, color, result] = [`Sorry, we don't deliver to ${pin} yet. We're live in ${SITE.city}.`, 'text-brand-800', 'not_serviceable'];
+  // the pincode shows where demand is; it is an area, not a person
+  track('pincode_check', { result, pincode: result === 'invalid' ? '' : pin });
   msg.textContent = text;
   msg.className = `mt-2 ml-4 min-h-6 text-sm font-semibold ${color}`;
 });
@@ -65,6 +68,7 @@ let file = null;
 const setFile = f => {
   if (!f) return;
   file = f;
+  track('rx_file_selected', { file_type: f.type.startsWith('image/') ? 'image' : 'pdf' });
   rxName.textContent = `✓ ${f.name}`;
   if (f.type.startsWith('image/')) rxPreview.src = URL.createObjectURL(f);
 };
@@ -76,12 +80,20 @@ rxFile.addEventListener('change', () => setFile(rxFile.files[0]));
 
 document.getElementById('rxSend').addEventListener('click', async () => {
   const note = document.getElementById('rxNote').value.trim();
-  const text = `Hi Pinzzo! I'd like to order medicines.${note ? `\n${note}` : ''}${file ? '\n(Prescription attached)' : ''}`;
+  const text = withRef(`Hi Pinzzo! I'd like to order medicines.${note ? `\n${note}` : ''}${file ? '\n(Prescription attached)' : ''}`);
+  // never send the note or file name: they can hold medicine and patient details
+  const rx = { has_file: !!file, has_note: !!note };
   if (file && navigator.canShare?.({ files: [file] })) {
-    try { await navigator.share({ files: [file], text }); return; } catch { /* cancelled -> fall back */ }
+    try { await navigator.share({ files: [file], text }); track('rx_send', { ...rx, method: 'share' }); return; } catch { /* cancelled -> fall back */ }
   }
+  track('rx_send', { ...rx, method: 'whatsapp_link' });
   window.open(waLink(text), '_blank', 'noopener');
 });
+
+// FAQ: which questions people open
+document.querySelectorAll('details.faq').forEach(d => d.addEventListener('toggle', () => {
+  if (d.open) track('faq_open', { question: d.querySelector('summary').textContent.trim() });
+}));
 
 // 7. Live ETA countdown in the chat mockup
 const eta = document.getElementById('eta');

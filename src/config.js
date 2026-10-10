@@ -14,7 +14,10 @@ export const SITE = {
   address: '[Registered address], Gurugram, Haryana – 1220XX',
   drugLicence: 'XXXX-XXXX',
   grievanceOfficer: '[Name], Grievance Officer',
-  policyUpdated: '6 October 2026',
+  policyUpdated: '10 October 2026',
+
+  // Google Analytics 4 Measurement ID (looks like G-ABC123XYZ). Empty = analytics off.
+  ga4Id: '',
 
   // Default message pre-filled when someone taps "Order on WhatsApp"
   waMessage: 'Hi Pinzzo! I would like to order medicines.',

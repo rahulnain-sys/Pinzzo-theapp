@@ -1,5 +1,6 @@
 import './style.css';
 import { SITE, waLink } from './config.js';
+import { initAnalytics, withRef } from './analytics.js';
 import {
   createIcons, Menu, X, MapPin, ShieldCheck, BadgePercent, Wallet, Phone, Upload, CircleCheck,
   Lock, Bell, Plus, Mail, Clock, ArrowLeft,
@@ -46,14 +47,15 @@ const footerHTML = () => `
   <div class="mx-auto mt-12 max-w-7xl border-t border-white/10 px-5 pt-6 text-xs">
     <p>Medicines are dispensed by licensed pharmacists against valid prescriptions. Information on this site is not a substitute for medical advice.</p>
     <p class="mt-3 font-bold tracking-widest text-accent">MEDICINE • WELLNESS • EVERYDAY HEALTH</p>
-    <p class="mt-3">© ${new Date().getFullYear()} ${SITE.legalName} · All rights reserved</p>
+    <p class="mt-3">© ${new Date().getFullYear()} ${SITE.legalName} · All rights reserved · <button data-cookie-settings class="underline hover:text-white">Cookie settings</button></p>
   </div>`;
 
 export function initCommon() {
+  initAnalytics();
   const footer = document.getElementById('site-footer');
   if (footer) footer.innerHTML = footerHTML();
 
-  document.querySelectorAll('[data-wa]').forEach(a => { a.href = waLink(a.dataset.waMsg); });
+  document.querySelectorAll('[data-wa]').forEach(a => { a.href = waLink(withRef(a.dataset.waMsg)); });
   document.querySelectorAll('[data-tel]').forEach(a => { a.href = `tel:${SITE.phone.replace(/\s/g, '')}`; });
   document.querySelectorAll('[data-mail]').forEach(a => { a.href = `mailto:${SITE.email}`; });
   document.querySelectorAll('[data-site]').forEach(el => { el.textContent = SITE[el.dataset.site]; });
